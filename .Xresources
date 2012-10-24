@@ -1,0 +1,41 @@
+!color0  (black) 	      = Black
+!color1  (red)            = Red3
+!color2  (green) 	      = Green3
+!color3  (yellow) 	      = Yellow3
+!color4  (blue) 	      = Blue3
+!color5  (magenta) 	      = Magenta3
+!color6  (cyan) 	      = Cyan3
+!color7  (white) 	      = AntiqueWhite
+!color8  (bright black)   = Grey25
+!color9  (bright red) 	  = Red
+!color10 (bright green)   = Green
+!color11 (bright yellow)  = Yellow
+!color12 (bright blue) 	  = Blue
+!color13 (bright magenta) = Magenta
+!color14 (bright cyan) 	  = Cyan
+!color15 (bright white)   = White
+!foreground 		      = Black
+!background 		      = White
+
+!URxvt*termName: rxvt-256color
+URxvt*termName: rxvt-unicode
+URxvt*transparent: true
+URxvt*depth: 32
+URxvt*shading: 70
+URxvt*saveLines: 12000
+URxvt*foreground: #BABABA
+URxvt.font: xft:terminus:pixelsize=11:antialias=false
+URxvt*scrollBar: false
+URxvt*borderLess: false
+URxvt*inheritPixmap: true
+URxvt.urlLauncher: google-chrome
+URxvt.imLocale: en_US.utf8
+
+URxvt*color0: #000000
+URxvt*color4: #005577
+URxvt*color6: #89b6e2
+URxvt*color7: #cccccc
+URxvt*color8: #555753
+URxvt*color12: #0075A3
+URxvt*color14: #46a4ff
+URxvt*color15: #ffffff	
