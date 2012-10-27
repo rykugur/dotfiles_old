@@ -1,7 +1,7 @@
 theme = {}
 theme.wallpaper_cmd = { "awsetbg /home/dusty/.config/awesome/themes/rollhax/background.png" }
 
-theme.font = "sans 8"
+theme.font = "terminus 8"
 
 --theme.widget_icon_bat     = "/home/dusty/.config/awesome/themes/rollhax/icons/bat.png"
 --theme.widget_icon_cpu     = "/home/dusty/.config/awesome/themes/rollhax/icons/cpu.png"
@@ -19,7 +19,7 @@ theme.bg_normal = "#1a1a1a"
 theme.bg_focus  = "#1a1a1a"
 theme.bg_urgent = "#3F3F3F"
 
-theme.border_width  = "2"
+theme.border_width  = "0"
 theme.border_normal = "#3F3F3F"
 theme.border_focus  = "#6F6F6F"
 theme.border_marked = "#CC9393"
@@ -36,7 +36,7 @@ theme.taglist_squares_sel   = "/home/dusty/.config/awesome/themes/zenburn/taglis
 theme.taglist_squares_unsel = "/home/dusty/.config/awesome/themes/zenburn/taglist/squarez.png"
 
 theme.awesome_icon           = "/home/dusty/.config/awesome/themes/zenburn/awesome-icon.png"
-theme.menu_submenu_icon      = "/home/dusty/.config/awesome/themes/default/submenu.png"
+--theme.menu_submenu_icon      = "/home/dusty/.config/awesome/themes/default/submenu.png"
 theme.tasklist_floating_icon = "/home/dusty/.config/awesome/themes/default/tasklist/floatingw.png"
 
 theme.layout_tile       = "/home/dusty/.config/awesome/themes/zenburn/layouts/tile.png"

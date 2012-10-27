@@ -51,6 +51,8 @@ lbracket = widget({type = "textbox" })
 lbracket.text = "["
 separator = widget({ type = "textbox" })
 separator.text = "|"
+separator_colon = widget({type = "textbox"})
+separator_colon.text = ":"
 space = widget({ type = "textbox" })
 space.text = ""
 space2 = widget({ type = "textbox" })
@@ -69,8 +71,7 @@ gradient4 = darkblue
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
---editor = os.getenv("EDITOR") or "nano"
-editor = "subl"
+editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -99,7 +100,7 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {
         names =  { "1:main",   "2:www",    "3:games",  "4:htpc",     "5:rdp",    "6:toaster", "7:cafe" },
-        layout = { layouts[8], layouts[8], layouts[1], layouts[8],   layouts[8], layouts[2],  layouts[2] }
+        layout = { layouts[8], layouts[8], layouts[8], layouts[1],   layouts[8], layouts[1],  layouts[1] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -116,6 +117,7 @@ myawesomemenu = {
 
 mygamesmenu = {
     { "hon", "/home/dusty/bin/hon" },
+    { "borderlands2", "/home/dusty/bin/borderlands2" },
     --{ "ftl", "/home/dusty/bin/ftl" },
     { "minecraft", "java -jar /home/dusty/Games/minecraft/minecraft.jar"},
     { "shadowbane", "/home/dusty/bin/shadowbane" },
@@ -309,11 +311,12 @@ for s = 1, screen.count() do
         {
             --mylauncher,
             mytaglist[s],
-            mylayoutbox[s],
+            --mylayoutbox[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
         --mylayoutbox[s],
+        mylayoutbox[s],
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
