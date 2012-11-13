@@ -30,7 +30,7 @@ theme.titlebar_bg_normal = "#3F3F3F"
 theme.mouse_finder_color = "#CC9393"
 
 theme.menu_height = "15"
-theme.menu_width  = "150"
+theme.menu_width  = "110"
 
 theme.taglist_squares_sel   = "/home/dusty/.config/awesome/themes/zenburn/taglist/squarefz.png"
 theme.taglist_squares_unsel = "/home/dusty/.config/awesome/themes/zenburn/taglist/squarez.png"

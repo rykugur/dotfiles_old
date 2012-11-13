@@ -52,11 +52,33 @@ lbracket.text = "["
 separator = widget({ type = "textbox" })
 separator.text = "|"
 separator_colon = widget({type = "textbox"})
-separator_colon.text = ":"
+separator_colon.text = "<span color='#3C63A6'>:</span>"
+separator_colons = widget({type = "textbox"})
+separator_colons.text = "::"
 space = widget({ type = "textbox" })
 space.text = ""
 space2 = widget({ type = "textbox" })
 space2.text = " "
+arrowdown_empty = widget({type = "textbox" })
+arrowdown_empty.text = "▿"
+arrowup_empty = widget({type = "textbox" })
+arrowup_empty.text = "▵"
+arrowdown_fill = widget({type = "textbox" })
+arrowdown_fill.text = "▾"
+arrowup_fill = widget({type = "textbox" })
+arrowup_fill.text = "▴"
+lbracket_double = widget({type = "textbox" })
+lbracket_double.text = "⟦"
+rbracket_double = widget({type = "textbox" })
+rbracket_double.text = "⟧"
+larrow = widget({type = "textbox" })
+larrow.text = "⟨"
+rarrow = widget({type = "textbox" })
+rarrow.text = "⟩"
+larrow_double = widget({type = "textbox" })
+larrow_double.text = "⟪"
+rarrow_double = widget({type = "textbox" })
+rarrow_double.text = "⟫"
 
 -- colors
 lighterblue = "#FFFFFF"
@@ -64,6 +86,14 @@ lightblue   = "#00FFFF"
 medblue     = "#0000FF"
 darkblue    = "#0000A0"
 
+-- "arch" colors
+arch_blue      = "#3C63A6"
+arch_darkblue  = "#293069"
+arch_lightblue = "#5D6CDE"
+arch_darkgray  = "#6E6E6E"
+arch_lightgray = "#D2D2D4"
+
+-- gradients
 gradient1 = lighterblue
 gradient2 = lightblue
 gradient3 = medblue
@@ -99,8 +129,8 @@ layouts =
 -------------------------------------------TAGS
 -- Define a tag table which hold all screen tags.
 tags = {
-        names =  { "1:main",   "2:www",    "3:games",  "4:htpc",     "5:rdp",    "6:toaster", "7:cafe" },
-        layout = { layouts[8], layouts[8], layouts[8], layouts[1],   layouts[8], layouts[1],  layouts[1] }
+        names =  { "1:main",   "2:www",    "3:games",  "4:media",  "5:rdp",    "6:toaster", "7:cafe" },
+        layout = { layouts[8], layouts[8], layouts[8], layouts[1], layouts[8], layouts[1],  layouts[1] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -118,11 +148,15 @@ myawesomemenu = {
 mygamesmenu = {
     { "hon", "/home/dusty/bin/hon" },
     { "borderlands2", "/home/dusty/bin/borderlands2" },
-    --{ "ftl", "/home/dusty/bin/ftl" },
+    { "ftl", "/home/dusty/bin/ftl" },
     { "minecraft", "java -jar /home/dusty/Games/minecraft/minecraft.jar"},
     { "shadowbane", "/home/dusty/bin/shadowbane" },
-    --{ "steam", "/home/dusty/bin/steam" },
+    { "steam", "/home/dusty/bin/steam" },
     { "ur-quan masters", "uqm" }
+}
+
+mymediamenu = {
+    { "spotify", "/home/dusty/bin/spotify" }
 }
 
 myofficemenu = {
@@ -135,14 +169,16 @@ myplacesmenu = {
 }
 
 myprogsmenu = {
-  { "htop", "urxvt -e htop"}
+  { "htop", "urxvt -e htop"},
+  { "ranger", "urxvt -e ranger" }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu },
-                                    { "games", mygamesmenu },
-                                    { "office", myofficemenu },
-                                    { "places", myplacesmenu },
-                                    { "progs", myprogsmenu },
+mymainmenu = awful.menu({ items = { { "awesome     >", myawesomemenu },
+                                    { "games       >", mygamesmenu },
+                                    { "media       >", mymediamenu },
+                                    { "office      >", myofficemenu },
+                                    { "places      >", myplacesmenu },
+                                    { "progs       >", myprogsmenu },
                                     { "chrome", "google-chrome" },
                                   }
                         })
@@ -156,58 +192,55 @@ mytextclock = awful.widget.textclock({ align = "right" })
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
+-- want widgets for: network, hard drive space, ram usage, volume, cpu usage, temperature, hostname display
+
 -- CPU Icon
 --cpuicon = widget({ type = "imagebox" })
 --cpuicon.image = image(beautiful.widget_icon_cpu)
 cpuicon = widget({ type = "textbox" })
 cpuicon.text = "cpu"
--- CPU Widget
-cpubar = awful.widget.progressbar()
-cpubar:set_width(50)
-cpubar:set_height(6)
-cpubar:set_vertical(false)
-cpubar:set_background_color("#434343")
-cpubar:set_gradient_colors({ gradient1, gradient2, gradient3, gradient4, beautiful.bar })
-vicious.register(cpubar, vicious.widgets.cpu, "$1", 7)
-awful.widget.layout.margins[cpubar.widget] = { top = 6 }
+cpuwidget = widget({ type = "textbox" })
+vicious.register( cpuwidget, vicious.widgets.cpu, "$1%", 3)
 
 -- MEM icon
 --memicon = widget ({type = "imagebox" })
 --memicon.image = image(beautiful.widget_icon_ram)
 memicon = widget({ type = "textbox" })
 memicon.text = "ram"
--- Initialize MEMBar widget
-membar = awful.widget.progressbar()
-membar:set_width(50)
-membar:set_height(6)
-membar:set_vertical(false)
-membar:set_background_color("#434343")
-membar:set_border_color(nil)
-membar:set_gradient_colors({ gradient1, gradient2, gradient3, gradient4, beautiful.bar })
-awful.widget.layout.margins[membar.widget] = { top = 6 }
-vicious.register(membar, vicious.widgets.mem, "$1", 13)
+memwidget = widget({ type = "textbox" })
+vicious.register(memwidget, vicious.widgets.mem, "$2 MB", 1)
 
--- -- BATT Icon
--- --baticon = widget({ type = "imagebox" })
--- --baticon.image = image(beautiful.widget_icon_bat)
--- baticon = widget({type = "textbox" })
--- baticon.text = "bat"
--- -- Initialize BATT widget
--- batbar = awful.widget.progressbar()
--- batbar:set_width(50)
--- batbar:set_height(6)
--- batbar:set_vertical(false)
--- batbar:set_background_color("#434343")
--- batbar:set_border_color(nil)
--- batbar:set_gradient_colors({ beautiful.fg_normal, beautiful.fg_normal, beautiful.fg_normal, beautiful.bar })
--- batbar:set_gradient_colors({ gradient1, gradient2, gradient3, gradient4, beautiful.bar })
--- awful.widget.layout.margins[batbar.widget] = { top = 6 }
--- vicious.register(batbar, vicious.widgets.bat, "$2", 120, "BAT1")
+-- DISK icon
+diskicon = widget({ type = "textbox" })
+diskicon.text = "disk"
+diskwidget = widget({ type = "textbox" })
+vicious.register(diskwidget, vicious.widgets.fs, "${/home used_p}%", 1)
 
--- -- WIFI icon
--- wifiicon = widget({ type = "textbox" })
--- wifiicon.text = "wifi"
--- -- WIWI bar widget
+-- datawidgetp = widget({ type = "textbox" })
+-- vicious.register(datawidgetp, vicious.widgets.fs, "${/media/Data used_p}%", 1)
+
+-- BATT Icon
+--baticon = widget({ type = "imagebox" })
+--baticon.image = image(beautiful.widget_icon_bat)
+baticon = widget({type = "textbox" })
+baticon.text = "bat"
+batwidget = widget({ type = "textbox" })
+vicious.register( batwidget, vicious.widgets.bat, "$1$2%", 1, "BAT0" )
+
+-- WIFI icons
+wifiicon = widget({ type = "textbox" })
+wifiicon.text = "wifi"
+wifiicon_down = widget({ type = "textbox" })
+wifiicon_down.text = "▿"
+wifiicon_up = widget({ type = "textbox" })
+wifiicon_up.text = "▵"
+-- WIFI widgets
+wifiwidgetdown = widget({ type = "textbox" })
+vicious.register(wifiwidgetdown, vicious.widgets.net, "${wlan0 down_kb}", 1)
+wifiwidgetup = widget({ type = "textbox" })
+vicious.register(wifiwidgetup, vicious.widgets.net, "${wlan0 up_kb}", 1)
+
+-- Progress bar example:
 -- wifibar = awful.widget.progressbar()
 -- wifibar:set_width(50)
 -- wifibar:set_height(6)
@@ -224,22 +257,15 @@ vicious.register(membar, vicious.widgets.mem, "$1", 13)
 --volicon.image = image(beautiful.widget_icon_vol)
 volicon = widget({ type = "textbox" })
 volicon.text = "vol"
--- Vol bar Widget
-volbar = awful.widget.progressbar()
-volbar:set_width(50)
-volbar:set_height(6)
-volbar:set_vertical(false)
-volbar:set_background_color("#434343")
-volbar:set_border_color(nil)
-volbar:set_gradient_colors({ gradient1, gradient2, gradient3, gradient4, beautiful.bar })
-awful.widget.layout.margins[volbar.widget] = { top = 6 }
-vicious.register(volbar, vicious.widgets.volume,  "$1",  1, "Master")
+-- Vol widget
+volwidget = widget ({ type = "textbox" })
+vicious.register( volwidget, vicious.widgets.volume, "$1%", 1, "Master" )
 ------------------------------------END WIDGETS
 
 ------------------------------------------WIBOX
 -- Create a wibox for each screen and add it
 mywibox = {}
-mybottomwibox = {}
+-- mybottomwibox = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
@@ -311,35 +337,48 @@ for s = 1, screen.count() do
         {
             --mylauncher,
             mytaglist[s],
-            --mylayoutbox[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
-        --mylayoutbox[s],
         mylayoutbox[s],
         mytextclock,
+        separator_colon, space2,
+        wifiwidgetdown, space2, wifiicon_down, space2, wifiwidgetup, space2, wifiicon_up, space2, wifiicon,
+        space2, separator_colon, space2,
+        batwidget, space2, baticon,        
+        space2, separator_colon, space2,
+        volwidget, space2, volicon,
+        space2, separator_colon, space2,
+        diskwidget, space2, diskicon,
+        space2, separator_colon, space2,
+        memwidget, space2, memicon,
+        space2, separator_colon, space2,
+        cpuwidget, space2, cpuicon,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
-    mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s })
+    -- mybottomwibox[s] = awful.wibox({ position = "bottom", screen = s })
 
 
-    mybottomwibox[s].widgets = {
-        {
-            lbracket, space2, cpuicon, space2, cpubar, space2, rbracket,
-            space2,
-            lbracket, space2, memicon, space2, membar, space2, rbracket,
-            space2,
-            -- lbracket, space2, baticon, space2, batbar, space2, rbracket,
-            -- space2,
-            -- lbracket, space2, wifiicon, space2, wifibar, space2, rbracket,
-            -- space2,
-            lbracket, space2, volicon, space2, volbar, space2, rbracket,
-            layout = awful.widget.layout.horizontal.leftright
-        },
-        layout = awful.widget.layout.horizontal.rightleft
-    }
+    -- mybottomwibox[s].widgets = {
+    --     {
+    --         space2,
+    --         cpuicon, space2, cpuwidget,
+    --         space2, separator_colon, space2,
+    --         memicon, space2, memwidget,
+    --         space2, separator_colon, space2,
+    --         diskicon, space2, diskwidget,
+    --         space2, separator_colon, space2,
+    --         volicon, space2, volwidget,
+    --         space2, separator_colon, space2,
+    --         baticon, space2, batwidget,
+    --         space2, separator_colon, space2,
+    --         wifiicon, space2, wifiicon_up, space2, wifiwidgetup, space2, wifiicon_down, space2, wifiwidgetdown,
+    --         layout = awful.widget.layout.horizontal.leftright
+    --     },
+    --     layout = awful.widget.layout.horizontal.rightleft
+    -- }
 end
 --------------------------------------END WIBOX
 
