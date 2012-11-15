@@ -47,7 +47,7 @@ set shiftwidth=4
 set tabstop=4
 
 " indent settings
-set smartindent
+set autoindent
 
 " search settings
 set ignorecase
