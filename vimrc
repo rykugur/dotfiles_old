@@ -111,7 +111,9 @@ noremap j h
 inoremap jj <ESC>
 
 " easy window split
-nnoremap <leader>w <C-w>v<C-w>l
+"nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>h :split<CR>
 
 " easy window switching
 noremap <C-j> <C-w>w
