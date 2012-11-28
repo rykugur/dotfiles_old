@@ -16,12 +16,14 @@ export PS1="${Blue}[${Color_Off}${LightGray}\u${Color_Off}${Blue}]${Color_Off} $
 export EDITOR=nano
 export PATH=$PATH:/home/dusty/bin
 
+alias df='df -h'
 alias dircount='ls -l | wc -l'
 alias dircountall='ls -al | wc -l'
-alias df='df -h'
 alias du='du -sh'
 alias grep='grep --color=auto -i'
 alias greppy='grep -niRE --color=auto'
+alias l.='ls -d .*'
+alias ll='ls -l'
 alias ls='ls -h --color=auto'
 alias mountiso='sudo mount -o loop -t iso9660'
 alias qlogic_vpn='sudo openconnect qlacmn.qlogic.com'
