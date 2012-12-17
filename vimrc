@@ -107,8 +107,10 @@ noremap l k
 noremap k j
 noremap j h
 
-" remap "jj" to <ESC> for eash switching
+" remap "jj" to <ESC> for easy switching
 inoremap jj <ESC>
+" remap ";;" to <ESC> for easy switching
+inoremap ;; <ESC>
 
 " easy window split
 "nnoremap <leader>w <C-w>v<C-w>l
