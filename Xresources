@@ -21,7 +21,7 @@
 URxvt*termName: rxvt-unicode
 URxvt*transparent: true
 URxvt*depth: 32
-URxvt*shading: 70
+URxvt*shading: 10
 URxvt*saveLines: 12000
 URxvt*foreground: #BABABA
 URxvt.font: xft:terminus:pixelsize=11:antialias=false
