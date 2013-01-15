@@ -7,6 +7,15 @@ let g:pathogen_disabled = []
 " call add(g:pathogen_disabled, 'plugin_name')
 "call add(g:pathogen_disabled, 'nerdcommenter')
 
+" function to trim trailing spaces on multiple lines
+" can alternatlive use <leader>s as detailed below for single lines
+fun! StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
 " filetype settings
 filetype on
 filetype plugin on
@@ -116,6 +125,10 @@ inoremap ;; <ESC>
 "nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>h :split<CR>
+
+" trim trailing spaces
+nnoremap <leader>s :s/\s\+$//e<CR>
+vnoremap <leader>S :call StripTrailingWhitespaces()<CR>
 
 " easy window switching
 noremap <C-j> <C-w>w
