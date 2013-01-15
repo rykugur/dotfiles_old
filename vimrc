@@ -21,6 +21,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" detect filetype fix
+au BufRead,BufNewFile *.exp set filetype=tcl
+
 " syntax and colorscheme specifics
 syntax enable
 colorscheme mustang
@@ -41,7 +44,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 " auto cmd stuff
 "autocmd vimenter * NERDTree
-"autocmd vimenter * TagbarOpen
+autocmd vimenter * TagbarOpen
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
