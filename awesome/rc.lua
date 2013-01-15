@@ -130,7 +130,7 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {
         names =  { "1:main",   "2:www",    "3:games",  "4:media",  "5:rdp",    "6:toaster", "7:cafe" },
-        layout = { layouts[8], layouts[8], layouts[8], layouts[1], layouts[8], layouts[1],  layouts[1] }
+        layout = { layouts[8], layouts[8], layouts[8], layouts[8], layouts[8], layouts[8],  layouts[8] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -147,7 +147,6 @@ myawesomemenu = {
 
 mygamesmenu = {
     { "hon", "/home/dusty/bin/hon" },
-    { "borderlands2", "/home/dusty/bin/borderlands2" },
     { "ftl", "/home/dusty/bin/ftl" },
     { "minecraft", "java -jar /home/dusty/Games/minecraft/minecraft.jar"},
     { "shadowbane", "/home/dusty/bin/shadowbane" },
