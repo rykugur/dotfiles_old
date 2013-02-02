@@ -1,16 +1,7 @@
 theme = {}
-theme.wallpaper_cmd = { "awsetbg /home/dusty/.config/awesome/themes/rollhax/background.png" }
+theme.wallpaper = "/home/dusty/.config/awesome/themes/rollhax/background.png"
 
 theme.font = "terminus 8"
-
---theme.widget_icon_bat     = "/home/dusty/.config/awesome/themes/rollhax/icons/bat.png"
---theme.widget_icon_cpu     = "/home/dusty/.config/awesome/themes/rollhax/icons/cpu.png"
---theme.widget_icon_netdown = "/home/dusty/.config/awesome/themes/rollhax/icons/down.png"
---theme.widget_icon_netup   = "/home/dusty/.config/awesome/themes/rollhax/icons/up.png"
---theme.widget_icon_mail    = "/home/dusty/.config/awesome/themes/rollhax/icons/mail.png"
---theme.widget_icon_mute    = "/home/dusty/.config/awesome/themes/rollhax/icons/mute.png"
---theme.widget_icon_ram     = "/home/dusty/.config/awesome/themes/rollhax/icons/ram.png"
---theme.widget_icon_vol     = "/home/dusty/.config/awesome/themes/rollhax/icons/vol.png"
 
 theme.fg_normal = "#DCDCCC"
 theme.fg_focus  = "#2C7E82"
@@ -19,7 +10,7 @@ theme.bg_normal = "#1a1a1a"
 theme.bg_focus  = "#1a1a1a"
 theme.bg_urgent = "#3F3F3F"
 
-theme.border_width  = "0"
+theme.border_width  = "1"
 theme.border_normal = "#3F3F3F"
 theme.border_focus  = "#6F6F6F"
 theme.border_marked = "#CC9393"

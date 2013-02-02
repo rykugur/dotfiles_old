@@ -64,6 +64,7 @@ set autoindent
 " search settings
 set ignorecase
 set incsearch
+set hlsearch
 
 " status line stuff
 set ls=2
