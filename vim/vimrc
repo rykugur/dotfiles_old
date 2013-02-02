@@ -125,6 +125,9 @@ inoremap jj <ESC>
 " remap ";;" to <ESC> for easy switching
 inoremap ;; <ESC>
 
+" select all
+nnoremap aa ggVG
+
 " easy window split
 "nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>v :vsplit<CR>
