@@ -1,8 +1,8 @@
 theme = {}
-theme.wallpaper = "/home/dusty/.config/awesome/themes/rollhax/background.png"
+theme.wallpaper = "/home/dusty/.config/awesome/themes/rollhax/background"
 
-theme.font = "terminus 8"
-
+--theme.font = "terminus 8"
+theme.font = "ohsnap 8"
 theme.fg_normal = "#DCDCCC"
 theme.fg_focus  = "#2C7E82"
 theme.fg_urgent = "#CC9393"
@@ -28,7 +28,10 @@ theme.taglist_squares_unsel = "/home/dusty/.config/awesome/themes/zenburn/taglis
 
 theme.awesome_icon           = "/home/dusty/.config/awesome/themes/zenburn/awesome-icon.png"
 --theme.menu_submenu_icon      = "/home/dusty/.config/awesome/themes/default/submenu.png"
-theme.tasklist_floating_icon = "/home/dusty/.config/awesome/themes/default/tasklist/floatingw.png"
+--theme.tasklist_floating_icon = "/home/dusty/.config/awesome/themes/default/tasklist/floatingw.png"
+theme.tasklist_floating = ""
+theme.tasklist_maximized_horizontal = ""
+theme.tasklist_maximized_vertical = ""
 
 theme.layout_tile       = "/home/dusty/.config/awesome/themes/zenburn/layouts/tile.png"
 theme.layout_tileleft   = "/home/dusty/.config/awesome/themes/zenburn/layouts/tileleft.png"
