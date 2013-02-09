@@ -8,6 +8,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "Chromium" },  properties = { tag = tags[1][2] } },
+    { rule = { class = "Heroes of Newerth" },  properties = { tag = tags[1][4] } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "URxvt" },

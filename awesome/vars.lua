@@ -39,6 +39,7 @@ arch_blue      = "#3C63A6"
 arch_darkblue  = "#293069"
 arch_lightblue = "#5D6CDE"
 arch_darkgray  = "#6E6E6E"
+arch_medgray   = "#A6A6A6"
 arch_lightgray = "#D2D2D4"
 
 rbracket = wibox.widget.textbox()

@@ -15,25 +15,25 @@ separatorwidget.fit = function(_, w, h)
     return 1, h
 end
 separatorwidget:set_widget(separatorwidget_text)
-separatorwidget:set_bg(arch_darkblue)
+separatorwidget:set_bg(arch_darkgray)
 
 -- date widget
 datewidget_text = wibox.widget.textbox()
-vicious.register(datewidget_text, vicious.widgets.date, " <span color='"..arch_darkgray.."'>%R</span> ", 61)
+vicious.register(datewidget_text, vicious.widgets.date, " <span color='"..white.."'>%R</span> ", 61)
 datewidget = wibox.widget.background()
 datewidget:set_widget(datewidget_text)
 --datewidget:set_bg(bgcol5)
 
 -- memory widget
 memwidget_text = wibox.widget.textbox()
-vicious.register(memwidget_text, vicious.widgets.mem, " <span color='"..arch_blue.."'>ram</span> <span color='"..arch_darkgray.."'>$2</span> ", 1)
+vicious.register(memwidget_text, vicious.widgets.mem, " <span color='"..arch_medgray.."'>ram</span> <span color='"..white.."'>$2</span> ", 1)
 memwidget = wibox.widget.background()
 memwidget:set_widget(memwidget_text)
 --memwidget:set_bg(bgcol2)
 
 -- CPU widget
 cpuwidget_text = wibox.widget.textbox()
-vicious.register(cpuwidget_text, vicious.widgets.cpu, " <span color='"..arch_blue.."'>cpu</span> <span color='"..arch_darkgray.."'>$3%</span>", 3)
+vicious.register(cpuwidget_text, vicious.widgets.cpu, " <span color='"..arch_medgray.."'>cpu</span> <span color='"..white.."'>$3%</span>", 3)
 cpuwidget = wibox.widget.background()
 cpuwidget.fit = function(_, w, h)
     return 52, h
@@ -47,7 +47,7 @@ cpuwidget:set_widget(cpuwidget_text)
 
 -- battery widget
 batwidget_text = wibox.widget.textbox()
-vicious.register(batwidget_text, vicious.widgets.bat, " <span color='"..arch_blue.."'>bat</span> <span color='"..arch_darkgray.."'>$2%$1</span> ", 1, "BAT0")
+vicious.register(batwidget_text, vicious.widgets.bat, " <span color='"..arch_medgray.."'>bat</span> <span color='"..white.."'>$2%$1</span> ", 1, "BAT0")
 batwidget = wibox.widget.background()
 batwidget:set_widget(batwidget_text)
 --batwidget:set_bg(bgcol1)
@@ -58,7 +58,7 @@ batwidget:set_widget(batwidget_text)
 
 -- volume widget
 volwidget_text = wibox.widget.textbox()
-vicious.register(volwidget_text, vicious.widgets.volume, " <span color='"..arch_blue.."'>vol</span> <span color='"..arch_darkgray.."'>$1%</span> ", 1, "Master")
+vicious.register(volwidget_text, vicious.widgets.volume, " <span color='"..arch_medgray.."'>vol</span> <span color='"..white.."'>$1%</span> ", 1, "Master")
 volwidget = wibox.widget.background()
 volwidget:set_widget(volwidget_text)
 --volwidget:set_bg(bgcol7)
