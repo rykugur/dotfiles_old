@@ -55,7 +55,7 @@ alias grep='grep --color=auto -i'
 alias greppy='grep -niRE --color=auto'
 alias l.='ls -d .*'
 alias ll='ls -l'
-alias ls='ls --color=auto'
+alias ls='ls++'
 alias mountiso='sudo mount -o loop -t iso9660'
 alias mountntfs='sudo mount -t ntfs -o nls=utf8,umask=0222'
 
