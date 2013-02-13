@@ -27,9 +27,6 @@ alias ll='ls -l'
 alias ls='ls --color=auto'
 alias mountiso='sudo mount -o loop -t iso9660'
 alias mountntfs='sudo mount -t ntfs -o nls=utf8,umask=0222'
-alias qlogic_vpn='sudo openconnect qlacmn.qlogic.com'
-alias vmdjerome='rdesktop -D -K -g 1920x1080 -u djerome -d QLOGIC vmdjerome'
-alias djeromessh='ssh djerome@djerome-linux'
 
 # tmux aliases
 alias tm2='tmux -2'
