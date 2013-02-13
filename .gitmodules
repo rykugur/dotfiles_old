@@ -42,4 +42,4 @@
 	url = git://github.com/erikw/tmux-powerline.git
 [submodule "shell/ls--"]
 	path = shell/ls--
-	url = git://github.com/trapd00r/ls--.git
+	url = git://github.com/trapd00r/ls--
