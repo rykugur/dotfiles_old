@@ -17,19 +17,23 @@
 !foreground 		      = Black
 !background 		      = White
 
+URxvt.background:[85]#000000
+URxvt*borderLess: false
+URxvt.colorBD:Gray95
+URxvt.colorUL:Green
+URxvt*cursorBlink: true
+URxvt*depth: 32
+URxvt*font: xft:terminus:pixelsize=11:antialias=false
+!URxvt*foreground: #BABABA
+URxvt.foreground:#ffffff
+URxvt*imLocale: en_US.utf8
+URxvt*saveLines: 12000
+URxvt*scrollBar: false
+URxvt*shading: 0
 !URxvt*termName: rxvt-256color
 URxvt*termName: rxvt-unicode
 URxvt*transparent: false
-URxvt*depth: 32
-URxvt*shading: 0
-URxvt*saveLines: 12000
-URxvt*foreground: #BABABA
-URxvt.font: xft:terminus:pixelsize=11:antialias=false
-URxvt*scrollBar: false
-URxvt*borderLess: false
-URxvt*inheritPixmap: true
-URxvt.urlLauncher: google-chrome
-URxvt.imLocale: en_US.utf8
+URxvt*urlLauncher: google-chrome
 
 URxvt*color0: #000000
 URxvt*color4: #005577
