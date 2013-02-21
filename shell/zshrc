@@ -65,3 +65,7 @@ alias tmls='tmux ls'
 alias tmat='tmux at'
 alias tmatt='tmux at -t'
 alias tmnew='tmux new -s'
+
+settitle() {
+    printf "\033k$1\033\\"
+}
