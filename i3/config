@@ -32,8 +32,8 @@ font xft:Terminus bold 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc -e tmux -2
-bindsym $mod+Control+Return exec urxvtc
+bindsym $mod+Return exec urxvtc
+bindsym $mod+Control+Return exec urxvtc -e tmux -2
 
 # kill focused window
 bindsym $mod+Shift+q kill
