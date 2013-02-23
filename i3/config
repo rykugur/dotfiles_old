@@ -58,6 +58,9 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
+# screenshot
+bindsym Print scrot
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -164,4 +167,6 @@ assign [class="Chromium"] $workspace2
 # or exec_always to exec on every reload
 exec feh --bg-scale /home/dusty/dotfiles/backgrounds/arch_chars.jpg
 # exec workspaces
-exec --no-startup-id i3-msg 'workspace 1: main; exec urxvtc -e tmux -2'
+#exec --no-startup-id i3-msg 'workspace 1: main; exec urxvtc -e tmux -2'
+# synchronize time once per boot
+exec 'ntpd -qg &'

@@ -11,12 +11,14 @@ override_utf8_locale yes
 # see here for variables:
 # http://conky.sourceforge.net/variables.html
 
+# mixer conky var requires oss module to be load
+# modprobe snd-pcm-oss
+
 TEXT
 ,[{"full_text": " cpu $acpitemp°C [$cpubar] ","color": "\#DC322F"},
   {"full_text": " mem [$membar] ", "color":"\#B58900"},
-  #{"full_text": " wifi [${wireless_link_qual_perc wlp3s0}%] ","color":"\#33CC99"},
   {"full_text": " wifi [${wireless_link_bar wlp3s0}] ","color":"\#33CC99"},
   {"full_text": " bat [$battery_bar] ","color":"\#9933CC"},
-  {"full_text": " snd [$mixerbar] ", "color":"\#268BD2"},
+  {"full_text": " snd [${mixerbar vol}] ", "color":"\#268BD2"},
   {"full_text": " ${time %a %b %d} ${time %H:%M} "}
 ]
