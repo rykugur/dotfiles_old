@@ -321,7 +321,7 @@ add_binds("normal", {
     key({}, "J", "Go back in the browser history `[count=1]` items.",
         function (w, m) w:back(m.count) end),
 
-    key({}, ":", "Go forward in the browser history `[count=1]` times.",
+    key({}, "K", "Go forward in the browser history `[count=1]` times.",
         function (w, m) w:forward(m.count) end),
 
     key({}, "XF86Back", "Go back in the browser history.",
@@ -341,6 +341,12 @@ add_binds("normal", {
         function (w) w:prev_tab() end),
 
     key({"Control"}, "Page_Down", "Go to next tab.",
+        function (w) w:next_tab() end),
+
+    key({"Mod1"}, "j", "Go to previous tab.",
+        function (w) w:prev_tab() end),
+
+    key({"Mod1"}, ";", "Go to next tab.",
         function (w) w:next_tab() end),
 
     key({"Control"}, "Tab", "Go to next tab.",
