@@ -343,10 +343,10 @@ add_binds("normal", {
     key({"Control"}, "Page_Down", "Go to next tab.",
         function (w) w:next_tab() end),
 
-    key({"Mod1"}, "j", "Go to previous tab.",
+    key({"Control"}, "j", "Go to previous tab.",
         function (w) w:prev_tab() end),
 
-    key({"Mod1"}, ";", "Go to next tab.",
+    key({"Control"}, ";", "Go to next tab.",
         function (w) w:next_tab() end),
 
     key({"Control"}, "Tab", "Go to next tab.",
@@ -375,8 +375,9 @@ add_binds("normal", {
     key({"Control"}, "w", "Close current tab.",
         function (w) w:close_tab() end),
 
-    key({}, "d", "Close current tab (or `[count]` tabs).",
-        function (w, m) for i=1,m.count do w:close_tab() end end, {count=1}),
+    key({}, "d", "Close current tab",
+        function (w) w:close_tab() end),
+        --function (w, m) for i=1,m.count do w:close_tab() end end, {count=1}),
 
     key({}, "<", "Reorder tab left `[count=1]` positions.",
         function (w, m)
@@ -461,11 +462,11 @@ readline_bindings = {
     key({"Control"}, "b", "Move cursor backward one character.",
         function (w) w:backward_char() end),
 
-    key({"Mod1"}, "f", "Move cursor forward one word.",
-        function (w) w:forward_word() end),
+    --key({"Mod1"}, "f", "Move cursor forward one word.",
+    --    function (w) w:forward_word() end),
 
-    key({"Mod1"}, "b", "Move cursor backward one word.",
-        function (w) w:backward_word() end),
+    --key({"Mod1"}, "b", "Move cursor backward one word.",
+    --    function (w) w:backward_word() end),
 }
 
 add_binds({"command", "search"}, readline_bindings)
@@ -474,7 +475,7 @@ add_binds({"command", "search"}, readline_bindings)
 mod1binds = {}
 for i=1,10 do
     table.insert(mod1binds,
-        key({"Mod1"}, tostring(i % 10), "Jump to tab at index "..i..".",
+        key({"Control"}, tostring(i % 10), "Jump to tab at index "..i..".",
             function (w) w.tabs:switch(i) end))
 end
 add_binds("normal", mod1binds)

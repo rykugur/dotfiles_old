@@ -51,7 +51,10 @@ soup.accept_policy = cookie_policy.always
 -- See: http://www.lua.org/manual/5.1/manual.html#pdf-string.format
 search_engines = {
     github      = "https://github.com/search?q=%s",
+    youtube     = "http://www.youtube.com/results?search_query=%s",
     google      = "https://google.com/search?q=%s",
+    arch        = "https://wiki.archlinux.org/index.php?search=%s",
+    aur         = "https://aur.archlinux.org/packages/?O=0&K=%s",
     imdb        = "http://www.imdb.com/find?s=all&q=%s",
     wikipedia   = "https://en.wikipedia.org/wiki/Special:Search?search=%s",
 }
